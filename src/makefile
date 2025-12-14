@@ -24,8 +24,11 @@ BUILD_DIR         := ../build
 DISK_IMG          := ${BUILD_DIR}/kernel.img
 DISK_IMG_SIZE     := 2880
 
+# OVMF firmware path (can be overridden with environment variable)
+OVMF_PATH         ?= OVMF.fd
+
 QEMU_FLAGS :=                                                \
-	-bios OVMF.fd                                              \
+	-bios ${OVMF_PATH}                                         \
 	-drive if=none,id=uas-disk1,file=${DISK_IMG},format=raw    \
 	-device usb-storage,drive=uas-disk1                        \
 	-serial stdio                                              \

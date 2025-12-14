@@ -4,6 +4,23 @@ This repository contains a simple UEFI ELF bootloader which loads a simple demon
 
 The aim of this repository is to serve as a basic teachable example of how to implement a UEFI bootloader.
 
+## Quick Start with GitHub Codespaces
+
+The easiest way to try this bootloader is using GitHub Codespaces:
+
+1. Click the **Code** button on this repository
+2. Select **Codespaces** tab
+3. Click **Create codespace on main** (or your branch)
+4. Wait for the environment to build (~10-15 minutes first time)
+5. Once ready, run in the terminal:
+   ```bash
+   ./run
+   ```
+
+This will build the bootloader and kernel, then launch it in QEMU. You'll see the bootloader output in the terminal.
+
+**Note:** QEMU runs in text mode in Codespaces. The serial output from the bootloader will appear in your terminal.
+
 ## Build instructions
 This bootloader assumes a GCC cross-compiler toolchain targeting the bare-metal `x86_64-elf` architecture. Instructions for building and obtaining a valid cross-compiler toolchain can be found [here](https://wiki.osdev.org/GCC_Cross-Compiler).
 

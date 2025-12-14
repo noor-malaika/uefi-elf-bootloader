@@ -1,0 +1,24 @@
+{
+  "name": "UEFI ELF Bootloader Development",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cpptools-extension-pack"
+      ],
+      "settings": {
+        "C_Cpp.default.compilerPath": "/usr/local/bin/x86_64-elf-gcc",
+        "C_Cpp.default.cStandard": "c11",
+        "C_Cpp.default.intelliSenseMode": "gcc-x64"
+      }
+    }
+  },
+  "containerEnv": {
+    "OVMF_PATH": "/usr/local/share/OVMF.fd"
+  },
+  "postCreateCommand": "echo 'Development environment ready! Run ./run to build and test the bootloader.'",
+  "remoteUser": "vscode"
+}
